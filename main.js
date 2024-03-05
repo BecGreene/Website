@@ -6,6 +6,11 @@ const styleSheetButton = document.querySelector("#style-sheet-button");
 let styleSheetBase = document.querySelector("#style-base")
 const styleSheetArray = [];
 
+const homeButton = document.querySelector("#home-button");
+const portfolioButton = document.querySelector("#portfolio-button");
+
+console.log(portfolioButton);
+
 funFactArray.push(
     "I am a big Vtuber fan, with my oshis (my favorites) being Gavis Bettel, Banzoin Hakka, Goldbullet, and my kamioshi (my favorite vtuber) being Josuiji Shinri from Holostars EN (POP POP POP!)",
     "I am a recovering picky eater and I will try anything once. Yes, I will try balut when I have the chance",
@@ -28,6 +33,8 @@ document.body.onload = changeStyleSheet;
 
 funFactButton.addEventListener("click", getFunFact);               
 styleSheetButton.addEventListener("click", changeStyleSheet);
+homeButton.addEventListener("click", window.location.href = "home.html");
+portfolioButton.addEventListener("click", window.location.href = "portfolio.html");
 
 function getFunFact() { funFactDisplay.innerHTML = funFactArray[Math.floor(Math.random() * funFactArray.length)]; }
 
