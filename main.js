@@ -1,11 +1,10 @@
-const ffbutton = document.querySelector("#fun-fact-button");
-let ffdisplay = document.querySelector("#display-fun-fact");
+const funFactButton = document.querySelector("#fun-fact-button");
+let funFactDisplay = document.querySelector("#display-fun-fact");
 const funFactArray = [];
 
-const ssbutton = document.querySelector("#style-sheet-button");
-let ssBase = document.querySelector("#style-base")
+const styleSheetButton = document.querySelector("#style-sheet-button");
+let styleSheetBase = document.querySelector("#style-base")
 const styleSheetArray = [];
-console.log(ssbutton);
 
 funFactArray.push(
     "I am a big Vtuber fan, with my oshis (my favorites) being Gavis Bettel, Banzoin Hakka, Goldbullet, and my kamioshi (my favorite vtuber) being Josuiji Shinri from Holostars EN (POP POP POP!)",
@@ -25,12 +24,11 @@ styleSheetArray.push(
     "style-3.css"
 );
 
-ffbutton.addEventListener("click", getFunFact);               
-ssbutton.addEventListener("click", changeStyleSheet);
+document.body.onload = changeStyleSheet;
 
-function getFunFact() { ffdisplay.innerHTML = funFactArray[Math.floor(Math.random() * funFactArray.length)]; }
+funFactButton.addEventListener("click", getFunFact);               
+styleSheetButton.addEventListener("click", changeStyleSheet);
 
-function changeStyleSheet() 
-{
-    ssBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[Math.floor(Math.random() * styleSheetArray.length)]}"></link>`;
-}
+function getFunFact() { funFactDisplay.innerHTML = funFactArray[Math.floor(Math.random() * funFactArray.length)]; }
+
+function changeStyleSheet() { styleSheetBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[Math.floor(Math.random() * styleSheetArray.length)]}"></link>`; }
