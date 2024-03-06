@@ -7,6 +7,8 @@ let styleSheetBase = document.querySelector("#style-base")
 const styleSheetArray = [];
 
 const portfolioButton = document.querySelector("#portfolio-button");
+const prevWorkButton= document.querySelector("#previous-work-button");
+const projectsButton= document.querySelector("#projects-button");
 
 funFactArray.push(
     "I am a big Vtuber fan, with my oshis (my favorites) being Gavis Bettel, Banzoin Hakka, Goldbullet, and my kamioshi (my favorite vtuber) being Josuiji Shinri from Holostars EN (POP POP POP!)",
@@ -30,11 +32,14 @@ document.body.onload = changeStyleSheet;
 
 funFactButton.addEventListener("click", getFunFact);               
 styleSheetButton.addEventListener("click", changeStyleSheet);
-homeButton.addEventListener("click", toHome);
 portfolioButton.addEventListener("click", toPortfolio);
+prevWorkButton.addEventListener("click", toPrevWork);
+projectsButton.addEventListener("click", toProjects);
 
 function getFunFact() { funFactDisplay.innerHTML = funFactArray[Math.floor(Math.random() * funFactArray.length)]; }
 
 function changeStyleSheet() { styleSheetBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[Math.floor(Math.random() * styleSheetArray.length)]}"></link>`; }
 
 function toPortfolio() { window.location.href = "portfolio.html"; }
+function toPrevWork() { window.location.href = "previous-work.html"; }
+function toProjects() { window.location.href = "projects.html"; }
