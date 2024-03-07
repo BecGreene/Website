@@ -1,11 +1,11 @@
 const homeButton = document.querySelector("#home-button");
+const porfolioButton= document.querySelector("#portfolio-button");
 const prevWorkButton= document.querySelector("#previous-work-button");
-const projectsButton= document.querySelector("#projects-button");
 
 homeButton.addEventListener("click", toHome);
+porfolioButton.addEventListener("click", toPortfolio);
 prevWorkButton.addEventListener("click", toPrevWork);
-projectsButton.addEventListener("click", toProjects);
 
 function toHome() { window.location.href = "home.html"; }
+function toPortfolio() { window.location.href = "portfolio.html"; }
 function toPrevWork() { window.location.href = "previous-work.html"; }
-function toProjects() { window.location.href = "projects.html"; }
