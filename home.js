@@ -5,8 +5,12 @@ const funFactArray = [];
 
 // Stylesheets
 const styleSheetButton = document.querySelector("#style-sheet-button");
-let styleSheetBase = document.querySelector("#style-base")
+let styleSheetBase = document.querySelector("#style-base");
 const styleSheetArray = [];
+
+// Icons
+let iconBase = document.querySelector("#icon-base");
+const iconArray = [];
 
 // Other pages
 const portfolioButton = document.querySelector("#portfolio-button");
@@ -34,6 +38,13 @@ styleSheetArray.push(
     "style-3.css"
 );
 
+// List of icons
+iconArray.push(
+    "icon_pink.png",
+    "icon_purple.png",
+    "icon_yellow.png"
+)
+
 // When first opening page / refreshing, change aesthetic of website
 document.body.onload = changeStyleSheet;
 
@@ -44,11 +55,20 @@ portfolioButton.addEventListener("click", toPortfolio);
 prevWorkButton.addEventListener("click", toPrevWork);
 projectsButton.addEventListener("click", toProjects);
 
+// Random number generator
+function randomNumber(array) { return array[Math.floor(Math.random() * array.length)]; }
+
 // Randomizes and displays fun fact from list
-function getFunFact() { funFactDisplay.innerHTML = funFactArray[Math.floor(Math.random() * funFactArray.length)]; }
+function getFunFact() { funFactDisplay.innerHTML = randomNumber(funFactArray); }
 
 // Randomizes and displays css stylesheet from list
-function changeStyleSheet() { styleSheetBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[Math.floor(Math.random() * styleSheetArray.length)]}"></link>`; }
+function changeStyleSheet() 
+{ 
+    let randNum = Math.floor(Math.random() * styleSheetArray.length);
+    styleSheetBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[randNum]}"></link>`;
+    //iconBase.innerHTML = `<link rel="icon" id="icon-base" type="image/x-icon" href="${iconArray[randNum]}"/>`; 
+    //console.log(`<link rel="icon" id="icon-base" href="${iconArray[randNum]}"/>`);
+}
 
 // Goes to different pages
 function toPortfolio() { window.location.href = "portfolio.html"; }

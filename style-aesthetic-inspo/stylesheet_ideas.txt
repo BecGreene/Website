@@ -18,3 +18,8 @@ https://aesthetics.fandom.com/wiki/Hydrogen
 
 Dreamcore
 https://aesthetics.fandom.com/wiki/Dreamcore
+
+Icon
+Pixel heart
+    - Changes color with stylesheet?
+Pixel Glasses
