@@ -9,7 +9,7 @@ let styleSheetBase = document.querySelector("#style-base");
 const styleSheetArray = [];
 
 // Icons
-let iconBase = document.querySelector("#icon-base");
+let iconBase = document.querySelector('link[rel="icon"]');
 const iconArray = [];
 
 // Other pages
@@ -66,8 +66,7 @@ function changeStyleSheet()
 { 
     let randNum = Math.floor(Math.random() * styleSheetArray.length);
     styleSheetBase.innerHTML = `<link id="style-base" rel="stylesheet" href="${styleSheetArray[randNum]}"></link>`;
-    //iconBase.innerHTML = `<link rel="icon" id="icon-base" type="image/x-icon" href="${iconArray[randNum]}"/>`; 
-    //console.log(`<link rel="icon" id="icon-base" href="${iconArray[randNum]}"/>`);
+    iconBase.href = iconArray[randNum];
 }
 
 // Goes to different pages
